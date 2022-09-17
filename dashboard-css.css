@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+    --main-color: #027581;
+    --color-dark: #1d2231;
+    --text-grey: #8390a2;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.pl-1 {
+    padding-left: 1rem;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.green {
+    color: green;
+}
+
+.pt-2 {
+    padding-top: 2rem;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+.sidebar {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: #fff;
+    overflow-y: auto;
+    transition: width 500ms;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0rem 1rem;
+}
+
+.sidebar-menu {
+    padding: 1rem;
+}
+
+.sidebar li {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar a {
+    color: #fff;
+    /* font-size: 0.8rem; */
+    text-decoration: none;
+}
+
+.sidebar a span:last-child {
+    padding-left: 0.6rem;
+}
+
+.sidebar_select {
+    color: #fff;
+    background-color: #027581;
+}
+
+#sidebar-toggle:checked~.sidebar {
+    width: 60px;
+}
+
+#sidebar-toggle:checked~.sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked~.sidebar li span:last-child {
+    display: none;
+}
+
+#sidebar-toggle:checked~.sidebar .sidebar-header,
+#sidebar-toggle:checked~.sidebar li {
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar-toggle:checked~.main-content {
+    margin-left: 60px;
+}
+
+#sidebar-toggle:checked~.main-content header {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+/*                                Dropdown Content Start                                           */
+/* The container <div> - needed to position the "dropdown content" */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background: var(--main-color);
+    color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #004557;
+    
+}
+
+/*                             Dropdown Content End                                               */
+
+
+
+
+/* _Header Start_ */
+.main-content {
+    position: relative;
+    margin-left: 240px;
+    transition: margin-left 500ms;
+}
+
+header {
+    position: fixed;
+    left: 240px;
+    top: 0;
+    z-index: 100;
+    width: calc(100% - 240px);
+    background: #fff;
+    height: 60px;
+    padding: 0rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    transition: left 500ms;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper input {
+    border: 0;
+    outline: 0;
+    padding: 1rem;
+    height: 38px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons span,
+.social-icons div {
+    margin-left: 1.2rem;
+}
+
+.social-icons div {
+    height: 38px;
+    width: 38px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/2.jpg);
+    border-radius: 50%;
+}
+
+/* _Header end */
+
+
+
+/* h5::after {
+    content: "";
+    display: inline-block;
+    width: 855px;
+    height: 2px;
+    background: #000;
+    left: 161px;
+    top: 122px;
+    position: absolute;
+     z-index:  -1 ; 
+} */
+
+
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        width: 60px;
+        z-index: 150;
+    }
+
+    .sidebar .sidebar-header h3 span,
+    .sidebar li span:last-child {
+        display: none;
+    }
+
+    .sidebar .sidebar-header,
+    .sidebar li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 60px;
+    }
+
+    .main-content header {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+
+    #sidebar-toggle:checked~.sidebar {
+        width: 240px;
+    }
+
+    #sidebar-toggle:checked~.sidebar .sidebar-header h3 span,
+    #sidebar-toggle:checked~.sidebar li span:last-child {
+        display: inline;
+    }
+
+    #sidebar-toggle:checked~.sidebar .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #sidebar-toggle:checked~.sidebar li {
+        display: block;
+    }
+
+    #sidebar-toggle:checked~.main-content {
+        margin-left: 60px;
+    }
+
+    #sidebar-toggle:checked~.main-content header {
+        left: 60px;
+    }
+}
